@@ -1,10 +1,6 @@
 @import "../../styles/colors.scss";
 
 .column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 1em;
   padding: 1em;
   border: 2px solid $header-color;
@@ -15,22 +11,29 @@
   &__wrapper {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     flex-wrap: wrap;
   }
 
+  &__content-box {
+    width: 250px;
+  }
+
   &__add-button {
-    border: 1px solid $header-color;
+    border: none;
     border-radius: 0.5em;
     background-color: $header-color;
     color: $primary-white;
     padding: 1em;
+    cursor: pointer;
   }
 
   &__title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 0.5em;
     color: $header-color;
+    word-break: break-word;
   }
 
   &__content {
@@ -44,11 +47,12 @@
     justify-content: center;
     align-items: center;
     height: 2em;
-    border: 1px solid $danger;
+    border: none;
     border-radius: 0.5em;
     background-color: $danger;
     color: $primary-white;
     padding: 1em;
+    cursor: pointer;
   }
 
   &__save-button {
@@ -56,11 +60,17 @@
     justify-content: center;
     align-items: center;
     height: 2em;
-    border: 1px solid $success;
+    border: none;
     border-radius: 0.5em;
     background-color: $success;
     color: $primary-white;
     padding: 1em;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
 
   &__change-name-box {

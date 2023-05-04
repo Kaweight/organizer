@@ -5,6 +5,7 @@ import { RootState } from "../../app/store";
 import "./ColumnList.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { TaskList } from "../task/TaskList";
 
 export function ColumnList() {
   const dispatch = useDispatch();
@@ -20,6 +21,8 @@ export function ColumnList() {
 
   const [editedColumnId, setEditedColumnId] = useState<number | null>(null);
   const [newColumnTitle, setNewColumnTitle] = useState<string>("");
+  const [newTaskName, setNewTaskName] = useState<string>("");
+  const [newTaskAdded, setNewTaskAdded] = useState<boolean>(false);
 
   const handleEditColumn = (id: number, title: string) => {
     setEditedColumnId(id);
@@ -60,6 +63,7 @@ export function ColumnList() {
                 <button
                   className="column__save-button"
                   onClick={handleUpdateTitle}
+                  disabled={newColumnTitle.length === 0}
                 >
                   Save
                 </button>
@@ -71,7 +75,7 @@ export function ColumnList() {
                 </button>
               </div>
             ) : (
-              <div>
+              <div className="column__content-box">
                 <div className="column__inner-elements">
                   <h2
                     className="column__title"
@@ -90,7 +94,7 @@ export function ColumnList() {
                     </div>
                   </div>
                 </div>
-                <p className="column__content">task</p>
+                <TaskList columnId={column.id} />
                 <button
                   className="column__remove-button"
                   onClick={() => handleRemoveColumn(column.id)}

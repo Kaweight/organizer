@@ -1,0 +1,125 @@
+@import "../../styles/colors.scss";
+
+.task-list {
+  &__item {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0.5em 0;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  &__save-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-between;
+  }
+
+  &__edit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.5em;
+    height: 2em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: $header-color;
+    color: $primary-white;
+    padding: 1em;
+    cursor: pointer;
+  }
+
+  &__remove-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: $danger;
+    color: $primary-white;
+    padding: 1em;
+    cursor: pointer;
+  }
+
+  &__task-content {
+    word-break: break-word;
+  }
+
+  &__add-form {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+  }
+
+  &__add-input {
+    display: block;
+    height: 2em;
+    padding: 0.5em;
+    border: 2px solid $primary-white;
+    border-radius: 8px;
+    color: $content-color;
+    background-color: $primary-white;
+    font-family: inherit;
+    transition: border-color 0.3s ease-in-out;
+
+    &:focus {
+      outline: none;
+      border-color: $header-color;
+    }
+  }
+
+  &__add-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    border: none;
+    border-radius: 8px;
+    background-color: $header-color;
+    color: $primary-white;
+    padding: 1em;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__save-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: $success;
+    color: $primary-white;
+    padding: 1em;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__cancel-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: $danger;
+    color: $primary-white;
+    padding: 1em;
+    cursor: pointer;
+  }
+}
